@@ -1,0 +1,10 @@
+@import url('./button.css');
+
+h1 {
+    color: red;
+}
+
+button {
+    background: black;
+    color: white;
+}
