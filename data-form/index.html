@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module" src="./data-form.js"></script>
+    <script type="module">
+        window.addEventListener('data-submited', (e)=> {
+            console.log('data-submited', e.detail);
+        });
+
+        window.addEventListener('data-change', (e)=> {
+            console.log('data-change', e.detail);
+        });
+
+        window.addEventListener("data-init", e => {
+            console.log('data-init', e.detail);
+        });
+    </script>
+    <style>
+        data-form {
+            border: 1px solid #111;
+            padding: 1rem;
+            display: block;
+            margin: 1rem;
+        }
+
+        data-group {
+            border: 1px solid #ccc;
+            display: block;
+            padding: 1rem;
+        }
+
+        data-submit {
+            margin: 1rem 0;
+            display: block;
+        }
+
+        data-input .invalid {
+            border: 1px solid red
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basic Usage</h1>
+    <data-form>
+        <data-input name="name" value="init name"></data-input>
+        <data-input type="number" name="age"></data-input>
+        
+        <data-submit></data-submit>
+    </data-form>
+
+    <h1>Simple Data Group</h1>
+    <data-form>
+        <data-group name="groupID">
+            <data-input name="name" value="init name"></data-input>
+            <data-input type="number" name="age"></data-input>
+        </data-group>
+        <data-submit></data-submit>
+    </data-form>
+
+    <h1>Nested Data Group</h1>
+    <data-group name="contact">
+        <data-group name="address">
+            <data-input name="street"></data-input>
+            <data-input type="number" name="house number"></data-input>
+        </data-group>
+    </data-group>
+
+    <h1>Playground</h1>
+
+    <data-form id="formID2">
+        <h2>No data-group</h2>
+        <data-input name="main" value="main"></data-input>
+        
+        <data-group name="parent">
+            <h2>Data-group</h2>
+            <data-input name="main" value="main"></data-input>
+
+            <data-group name="child">
+                <h3>data-group</h3>
+                <!-- <input value='native' /> -->
+                <data-input name="name"></data-input>
+
+                <data-group name="very-deep" bubbles="true">
+                    <data-input name="name" value="init name"></data-input>
+                    <data-input type="number" name="age"></data-input>
+                </data-group>
+
+            </data-group>
+
+        </data-group>
+        
+
+        <data-submit>Submit</data-submit>
+    </data-form>
+
+</body>
+</html>

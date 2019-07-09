@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script type='module' src='form-container.js'></script>
+    <script type='module' src='scripts.js'></script>
+</head>
+<body>
+    <div id="preview"></div>
+    
+    <h1>Form 1</h1>
+    <form-container>
+        <form id="form1">
+            <fieldset>
+                <legend>Basic</legend>
+
+                <label for="name">name</label>
+                <input name="name" id="name" required />
+
+                <label for="name">age</label>
+                <input id="age" name="age" type="number" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Check it</legend>
+                <label for="checker">checker</label>
+                <input id="checker" name="checker" type="checkbox" checked/>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Location</legend>
+                
+                <label for="continent">continent</label>                
+                <select id="continent" name="continent">
+                    <option name="europe">Europe</option>
+                    <option name="us" selected>America</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Service</legend>
+                <label for="continent">All Exclusive</label>             
+                <input name="food" type="radio" value="all" checked>
+
+                <label for="continent">Without meals</label>
+                <input name="food" type="radio" value="no">
+            </fieldset>
+
+            <button type="submit">Submit form1</button>
+        </form>
+    </form-container>
+
+    <h2>Form submit outside scope</h2>
+    <button type="submit" form="form1">Submit form1</button>
+    
+    <h1>Form 2</h1>
+    <form-container>
+        <form id="form2">
+            <input name="superhero" />
+            <button type="submit">Submit form2</button>
+        </form>
+    </form-container>
+</body>
+</html>

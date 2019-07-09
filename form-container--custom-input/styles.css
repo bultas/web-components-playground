@@ -1,0 +1,61 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+}
+
+form {
+  margin: 3rem 0rem;
+}
+
+button {
+  cursor: pointer;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+label {
+  display: inline-block;
+  /* margin: 1em; */
+}
+
+input {
+  display: block;
+}
+
+input + span {
+  display: none;
+}
+
+input.invalid + span {
+  display: block
+}
+
+/* input::before {
+	content: 'attr(data-validation)';
+} */
+
+form-data-preview {
+  display: block;
+  padding: 1rem;
+  background: cornsilk;
+  overflow-wrap: break-word;
+}
+
+custom-input {
+  display: block;
+}
+
+input-group {
+  display: block;
+  margin: 1rem 0 0 1rem;
+}
+
+.invalid {
+  border: 2px solid coral;
+  background: coral;
+}
+
+.superinput {
+  border: 4px solid greenyellow
+}

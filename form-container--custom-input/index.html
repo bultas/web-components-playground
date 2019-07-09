@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="form-container.js"></script>
+    <script type="module" src="scripts.js"></script>
+  </head>
+  <body>
+    <code><form-data-preview></form-data-preview></code>
+
+    <form-container id="my_form">
+      <template>
+        <form id="form1" novalidate>
+          <fieldset>
+            <legend>Basic</legend>
+
+            <label for="name">name</label>
+            <input name="name" id="name" required />
+            <span>Please insert valid name</span>
+
+            <label for="email">email</label>
+            <input name="email" id="email" class="emailovina" required />
+            <span>Please insert valid email</span>
+
+            <label for="readonly">readonly</label>
+            <input name="readonly" id="readonly" value="submited" readonly />
+
+            <label for="disabled">disabled</label>
+            <input
+              name="disabled"
+              id="disabled"
+              value="not submited"
+              disabled
+            />
+
+            <label for="name">age</label>
+            <input id="age" name="age" type="number" value="123" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Check it</legend>
+            <label for="checker">checker</label>
+            <input id="checker" name="checker" type="checkbox" checked />
+          </fieldset>
+
+          <fieldset>
+            <legend>File upload</legend>
+            <label for="file">file</label>
+            <input id="file" name="file" type="file" />
+          </fieldset>
+
+          <h4>This is not form element</h4>
+
+          <fieldset>
+            <legend>Location</legend>
+
+            <label for="continent">continent</label>
+            <select id="continent" name="continent">
+              <option name="europe">Europe</option>
+              <option name="us" selected>America</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Multiple</legend>
+
+            <label for="countries">countries</label>
+            <select multiple id="countries" name="countries">
+              <option name="cz">CZ</option>
+              <option name="de" selected>DE</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Service</legend>
+            <label for="food">All Exclusive</label>
+            <input name="food" type="radio" value="all" checked />
+
+            <label for="food">Without meals</label>
+            <input name="food" type="radio" value="no" />
+          </fieldset>
+
+          <fieldset>
+            <legend>range</legend>
+            <label for="note">range</label>
+            <input
+              type="range"
+              size="2"
+              name="range"
+              min="1"
+              max="5"
+              value="3"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Datalist</legend>
+            <input list="browsers" name="browser" />
+            <datalist id="browsers">
+              <option value="explorer">Internet Explorer</option>
+              <option value="firefox">Firefox</option>
+              <option value="chrome">Chrome</option>
+              <option value="opera">Opera</option>
+              <option value="safari">Safari</option>
+            </datalist>
+          </fieldset>
+
+          <fieldset>
+            <legend>Note</legend>
+            <label for="note">Note</label>
+            <textarea name="note"></textarea>
+          </fieldset>
+
+          <input name="hide" type="hidden" />
+
+          <custom-input name="custom" value="" type="input" required>
+            <button value="super">super</button>
+            <button value="idiot">idiot</button>
+          </custom-input>
+
+          <button type="submit">Submit form1</button>
+          <button type="reset">Reset</button>
+        </form>
+      </template>
+    </form-container>
+  </body>
+</html>

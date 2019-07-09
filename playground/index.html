@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../system-fonts/system-fonts.css">
+    <script type="module" src="../simple-accordion/simple-accordion.js"></script>
+    <script stype="module" src="../form-container/form-container.js"></script>
+    
+    <script type="module">
+        window.addEventListener('form-submit', (e) => {
+            console.log(e.detail);
+        })
+    </script>
+</head>
+<body>
+
+    <h1>Playground</h1>
+
+    <form-container>
+        <form id="user-settings">
+
+            <label for="name">name</label>
+            <input name="name" id="name" required />
+    
+            <label for="name">age</label>
+            <input id="age" name="age" type="number" />
+
+        
+            <simple-accordion name="show advanced">
+                <label for="advanced">Advanced</label>
+                <input name="advanced" id="advanced" />
+        
+                <label for="settings">settings</label>
+                <input id="settings" name="settings" type="number" />
+            </simple-accordion>
+                
+            <button type="submit">Save</button>
+        
+        </form>
+    </form-container>
+
+    
+</body>
+</html>

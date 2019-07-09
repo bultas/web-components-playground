@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module" src="simple-accordion.js"></script>
+</head>
+<body>
+    <style>
+        :root {
+            --background-color: black
+        }
+
+        label {
+            color: white;
+            background: var(--background-color)
+        }
+
+        simple-accordion {
+            --background-color: #eee;
+            --padding: 0.5rem;
+
+            margin: 1rem 0;
+        }
+    </style>
+
+    <h1>Simple usage</h1>
+    <simple-accordion 
+        name="Show more"
+    >
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore atque voluptas ea error! Aut fugiat similique cumque quasi alias incidunt minima, atque, veniam ex quisquam exercitationem nisi dolorum molestiae vero?</p>
+    </simple-accordion>
+
+    <simple-accordion 
+        name="Opened one"
+        open="true"
+    >
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore atque voluptas ea error! Aut fugiat similique cumque quasi alias incidunt minima, atque, veniam ex quisquam exercitationem nisi dolorum molestiae vero?</p>
+    </simple-accordion>
+
+    <h1>Using Slot</h1>
+    <simple-accordion 
+        name="Show more"
+    >
+        <div>Pass globally styled content. But CSS Variables are passed to slot style</div>
+        <label>This is not affected by shadow style</label>
+        <input />
+    </simple-accordion>
+
+    <h1>Global untouched</h1>
+    <input id="testCheck" type="checkbox" /><label for="testCheck">in Global Scope</label>
+</body>
+</html>
