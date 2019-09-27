@@ -1,15 +1,19 @@
-const addListenerToToggl = ariaState => toggle => {
-  toggle.addEventListener("click", e => {
+const switchAriaState = ariaState => target => {
+  const pressed = target.getAttribute(ariaState) === "true";
+  target.setAttribute(ariaState, String(!pressed));
+};
+
+const addClickListenersToButtons = ariaState => button => {
+  button.addEventListener("click", e => {
     const currentTarget = e.currentTarget;
-    const pressed = currentTarget.getAttribute(ariaState) === "true";
-    currentTarget.setAttribute(ariaState, String(!pressed));
+    switchAriaState(ariaState)(currentTarget);
   });
 };
 
 const registerAriaButtonsListeners = ariaState =>
   document
     .querySelectorAll(`[${ariaState}]`)
-    .forEach(addListenerToToggl(ariaState));
+    .forEach(addClickListenersToButtons(ariaState));
 
 registerAriaButtonsListeners("aria-pressed");
 registerAriaButtonsListeners("aria-expanded");
